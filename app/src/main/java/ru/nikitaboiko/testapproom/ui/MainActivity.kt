@@ -40,7 +40,6 @@ class MainActivity : MvpAppCompatActivity(), MainView {
 
         search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                mainPresenter.getCarsList(query as String)
                 return true
             }
 

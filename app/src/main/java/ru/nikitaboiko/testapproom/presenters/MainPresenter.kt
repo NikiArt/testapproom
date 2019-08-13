@@ -33,28 +33,24 @@ class MainPresenter : MvpPresenter<MainView>() {
                         .subscribeOn(Schedulers.io())
                         .subscribe { addResult ->
                             adapterPresenter.cars.addAll(addResult)
+                            viewState.initialize()
                         }
                 } else {
                     adapterPresenter.cars.addAll(result)
+                    viewState.initialize()
                 }
-                viewState.initialize()
             }
     }
 
-    fun getCarsList(request: String) {
-        if (request.isEmpty()) {
-            loadData()
-        } else {
-            carCache.getListWithRequest(request)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { result ->
-                    adapterPresenter.cars.clear()
-                    adapterPresenter.cars.addAll(result)
-                    viewState.initialize()
-                }
-        }
-
+    fun getCarsList(request: String = "") {
+        carCache.getListWithRequest(request)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { result ->
+                adapterPresenter.cars.clear()
+                adapterPresenter.cars.addAll(result)
+                viewState.updateList()
+            }
     }
 
     fun getAdapterPresenter(): AdapterPresenter {
