@@ -1,4 +1,9 @@
 package ru.nikitaboiko.testapproom.view
 
-interface MainView {
+import com.arellomobile.mvp.MvpView
+
+interface MainView : MvpView {
+    fun initialize()
+
+    fun updateList()
 }

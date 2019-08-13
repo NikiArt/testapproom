@@ -10,7 +10,7 @@
         tools:context=".ui.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/activity_giphy_list"
+            android:id="@+id/content_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
@@ -20,14 +20,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_giphy_search_view"
+            app:layout_constraintTop_toBottomOf="@+id/content_search_view"
             tools:itemCount="6"
             tools:listitem="@layout/item">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <androidx.appcompat.widget.SearchView
-            android:id="@+id/activity_giphy_search_view"
+            android:id="@+id/content_search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

@@ -8,6 +8,14 @@ import ru.nikitaboiko.testapproom.di.DaggerAppComponent
 class App : Application() {
     private lateinit var appComponent: AppComponent
 
+    companion object {
+        lateinit var instance: App
+
+        fun instance(): App {
+            return instance
+        }
+    }
+
     override fun onCreate() {
         super.onCreate()
         instance = this
@@ -17,11 +25,9 @@ class App : Application() {
             .build()
     }
 
-    companion object {
-        lateinit var instance: App
-
-        fun instance(): App {
-            return instance
-        }
+    fun getAppComponent(): AppComponent {
+        return appComponent
     }
+
+
 }

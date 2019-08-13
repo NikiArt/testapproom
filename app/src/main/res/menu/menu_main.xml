@@ -2,8 +2,20 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="ru.nikitaboiko.testapproom.ui.MainActivity">
-    <item android:id="@+id/action_settings"
+    <item android:id="@+id/menu_action_settings"
           android:title="@string/action_settings"
           android:orderInCategory="100"
           app:showAsAction="never"/>
+    <group android:id="@+id/menu_sort_group">
+        <item android:id="@+id/menu_sort_model"
+              android:title="@string/sort_by_model"/>
+        <item android:id="@+id/menu_sort_submodel"
+              android:title="@string/sort_by_submodel"/>
+        <item android:id="@+id/menu_sort_number"
+              android:title="@string/sort_by_number"/>
+        <item android:id="@+id/menu_sort_age"
+              android:title="@string/sort_by_age"/>
+        <item android:id="@+id/menu_sort_color"
+              android:title="@string/sort_by_color"/>
+    </group>
 </menu>

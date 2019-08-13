@@ -12,6 +12,9 @@ interface CarDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(car: Car)
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insert(cars: List<Car>)
+
     @Query(
         "SELECT * FROM car WHERE " +
                 "carNumber LIKE '%' || :searchValue || '%'" +

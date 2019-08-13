@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Test App</string>
     <string name="action_settings">Settings</string>
+    <string name="sort_by_model">Sort by model</string>
+    <string name="sort_by_submodel">Sort by submodel</string>
+    <string name="sort_by_number">Sort by number</string>
+    <string name="sort_by_age">Sort by age</string>
+    <string name="sort_by_color">Sort by color</string>
 </resources>
