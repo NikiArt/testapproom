@@ -38,6 +38,18 @@ class MainActivity : MvpAppCompatActivity(), MainView {
         search = findViewById(R.id.content_search_view)
         recyclerView = findViewById(R.id.content_list)
 
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                mainPresenter.getCarsList(query as String)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                mainPresenter.getCarsList(newText as String)
+                return false
+            }
+        })
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
