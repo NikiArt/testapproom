@@ -14,6 +14,8 @@ class MainPresenter : MvpPresenter<MainView>() {
     @Inject
     lateinit var carCache: CarCache
 
+    lateinit var sortValue: String
+
     private val adapterPresenter = AdapterPresenter()
 
     override fun onFirstViewAttach() {
@@ -49,11 +51,24 @@ class MainPresenter : MvpPresenter<MainView>() {
             .subscribe { result ->
                 adapterPresenter.cars.clear()
                 adapterPresenter.cars.addAll(result)
+                sortListBy()
                 viewState.updateList()
             }
     }
 
     fun getAdapterPresenter(): AdapterPresenter {
         return adapterPresenter
+    }
+
+    fun sortListBy(sortValue: String = "") {
+        if (!sortValue.isEmpty()) this.sortValue = sortValue
+        when (this.sortValue) {
+            "model" -> adapterPresenter.cars.sortBy { it.model }
+            "submodel" -> adapterPresenter.cars.sortBy { it.submodel }
+            "number" -> adapterPresenter.cars.sortBy { it.carNumber }
+            "age" -> adapterPresenter.cars.sortBy { it.age }
+            "color" -> adapterPresenter.cars.sortBy { it.color }
+        }
+        viewState.updateList()
     }
 }

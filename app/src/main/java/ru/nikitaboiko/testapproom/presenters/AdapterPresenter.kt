@@ -20,6 +20,4 @@ class AdapterPresenter {
             car.color
         )
     }
-
-
 }

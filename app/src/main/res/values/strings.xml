@@ -6,4 +6,6 @@
     <string name="sort_by_number">Sort by number</string>
     <string name="sort_by_age">Sort by age</string>
     <string name="sort_by_color">Sort by color</string>
+    <string name="search">Search</string>
+    <string name="sort">Sort</string>
 </resources>

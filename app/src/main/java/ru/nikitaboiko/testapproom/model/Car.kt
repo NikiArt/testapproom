@@ -10,5 +10,4 @@ class Car(
     val submodel: String,
     val age: Int,
     val color: String
-) {
-}
+)
