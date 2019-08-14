@@ -14,7 +14,7 @@ class MainPresenter : MvpPresenter<MainView>() {
     @Inject
     lateinit var carCache: CarCache
 
-    lateinit var sortValue: String
+    var sortValue: String = ""
 
     private val adapterPresenter = AdapterPresenter()
 
